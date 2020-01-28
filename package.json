@@ -1,0 +1,13 @@
+{
+  "name": "tp2-genthial-arthur",
+  "private": true,
+  "version": "13.0.1",
+  "description": "tp2-docker",
+  "author": "",
+  "dependencies": {
+    "express": "3.2.4"
+  },
+  "scripts" : {
+    "start": "node index.js"
+  }
+}
