@@ -11,4 +11,4 @@ github_username: Voltzy9
 `docker-compose down`
 `docker-compose up`
 `docker ps`
-`docker exec 'nom_du_fichier' bash`
+`docker-compose exec 'nom_du_fichier' bash`

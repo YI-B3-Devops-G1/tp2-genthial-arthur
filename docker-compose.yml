@@ -2,15 +2,21 @@ version: '3'
 
 services:
   nginx:
+    container_name: nginx
     build:
       context: .
-      dockerfile: DockerFile
+      dockerfile: html/DockerFile
     ports:
     - "3000:3000"
   node:
+    container_name: node
     build:
       context: .
-      dockerfile: node/DockerFile
+      dockerfile: DockerFile
+    volumes:
+      - ./:/home/node/app
+
+
 
 #  redis:
 #      image: redis
