@@ -15,16 +15,23 @@ services:
       dockerfile: DockerFile
     volumes:
       - ./:/home/node/app
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=db
+      - DB_USER=user
+      - DB_PASSWORD=root
 
+  db:
+    container_name: postgres
+    image: postgres
+    volumes:
+      - "./pgdata:/var/lib/postgresql/data/pgdata"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: db
 
-
-#  redis:
-#      image: redis
-#  db:
-#    image: postgres
-#    environment:
-#      POSTGRES_PASSWORD: root
-#  adminer:
-#    image: adminer
-#    ports:
-#    - "3000:3000"
+  redis:
+    container_name: redis
+    image: redis
