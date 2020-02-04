@@ -21,8 +21,9 @@ services:
       - DB_NAME=db
       - DB_USER=user
       - DB_PASSWORD=root
+      - REDIS_HOST=redis
 
-  db:
+  postgres:
     container_name: postgres
     image: postgres
     volumes:
@@ -31,6 +32,9 @@ services:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: root
       POSTGRES_DB: db
+      PGDATA: /pgdata
+
+    restart: on-failure
 
   redis:
     container_name: redis

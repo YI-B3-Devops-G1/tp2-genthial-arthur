@@ -5,7 +5,9 @@
   "description": "tp2-docker",
   "author": "",
   "dependencies": {
-    "express": "^3.21.2"
+    "express": "^3.21.2",
+    "postgres": "^1.0.2",
+    "redis": "^2.8.0"
   },
   "scripts": {
     "start": "node index.js"
